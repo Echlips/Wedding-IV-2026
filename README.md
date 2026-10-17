@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Wedding Celebration</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Islamic Wedding Invitation - A & M</title>
+    <!-- Google Fonts: Elegant and complementary -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Marcellus&family=Tajawal:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        /* Color Palette & Islamic Elements */
         :root {
-            --primary-color: #8c6d46;
-            --accent-color: #f7f3ed;
-            --text-color: #333333;
-            --light-bg: #faf7f2;
+            --bg-color: #f6faf2;          /* Very light green background */
+            --primary-green: #1a4d2e;     /* Rich Islamic Green */
+            --accent-green: #0a2d1a;       /* Dark Green */
+            --primary-gold: #c6a059;      /* Metallic/Matte Gold */
+            --dark-gold: #9c7b41;         /* Darker shading gold */
+            --text-on-dark: #fffdf9;
+            --text-on-light: #2c2c2c;
+            --font-main: 'Tajawal', sans-serif;
+            --font-header: 'Marcellus', serif;
+            --font-cursive: 'Great Vibes', cursive;
         }
 
         * {
@@ -21,227 +28,334 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--light-bg);
-            color: var(--text-color);
-            line-height: 1.6;
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-on-light);
+            line-height: 1.8;
             text-align: center;
+            overflow-x: hidden;
         }
 
+        /* --- Header / Hero Section --- */
         header {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            color: white;
-            padding: 100px 20px;
-            min-height: 80vh;
+            position: relative;
+            /* Islamic pattern background over a dark green gradient */
+            background: linear-gradient(rgba(10, 45, 26, 0.85), rgba(26, 77, 46, 0.85)), 
+                        url('https://images.unsplash.com/photo-1606103901170-eb3c87e59c6c?q=80&w=2000') no-repeat center center/cover;
+            color: var(--text-on-dark);
+            padding: 120px 20px 80px;
+            min-height: 90vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            border-bottom: 8px solid var(--primary-gold);
         }
 
-        .save-the-date {
-            font-size: 1.2rem;
+        /* Gold border elements (simple illustration) */
+        header::before, header::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-gold);
+            height: 2px;
+            width: 80px;
+        }
+
+        header::before { top: 60px; }
+        header::after { bottom: 60px; }
+
+        .bismillah {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: var(--primary-gold);
+            font-weight: 500;
+        }
+
+        .basmala-text {
+            font-family: 'Times New Roman', Times, serif; /* Basic Arabic fallback */
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .couple-names {
+            font-family: var(--font-cursive);
+            font-size: 5rem;
+            margin-bottom: 25px;
+            color: var(--primary-gold);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .invitation-date {
+            font-size: 1.4rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-            margin-bottom: 15px;
+            color: #d8c3a5; /* Softer Gold */
         }
 
-        h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 4.5rem;
-            margin-bottom: 20px;
-            color: #fceade;
-        }
-
-        .wedding-date {
-            font-size: 1.4rem;
-            font-weight: 300;
-            letter-spacing: 2px;
-        }
-
+        /* --- Sections --- */
         section {
-            padding: 60px 20px;
-            max-width: 800px;
+            padding: 80px 20px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .section-title {
-            font-family: 'Great Vibes', cursive;
-            font-size: 3rem;
-            color: var(--primary-color);
+            font-family: var(--font-cursive);
+            font-size: 3.5rem;
+            color: var(--primary-green);
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-family: var(--font-header);
+            text-transform: uppercase;
+            letter-spacing: 2px;
             margin-bottom: 20px;
+            color: var(--primary-green);
+        }
+
+        .islamic-greeting {
+            font-size: 1.3rem;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+            font-weight: 500;
         }
 
         p {
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             margin-bottom: 30px;
-            color: #555;
+            color: var(--text-on-light);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Countdown Timer */
-        .countdown-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .countdown-box {
-            background: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            min-width: 80px;
-        }
-
-        .countdown-number {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .countdown-label {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: #777;
-            margin-top: 5px;
-        }
-
-        /* Details Cards */
+        /* --- Details Cards --- */
         .details-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
         }
 
         .card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary-gold);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
         }
 
         .card h3 {
-            font-size: 1.4rem;
+            font-family: var(--font-header);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: var(--primary-gold);
+            text-transform: uppercase;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             margin-bottom: 15px;
-            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .icon {
+            font-size: 1.3rem;
+            color: var(--primary-green);
         }
 
         .btn {
             display: inline-block;
-            margin-top: 15px;
-            padding: 10px 25px;
-            background-color: var(--primary-color);
-            color: white;
+            margin-top: 25px;
+            padding: 12px 35px;
+            background-color: var(--primary-green);
+            color: var(--text-on-dark);
             text-decoration: none;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            transition: background 0.3s ease;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-green);
         }
 
         .btn:hover {
-            background-color: #725534;
+            background-color: var(--bg-color);
+            color: var(--primary-green);
+            border: 2px solid var(--primary-gold);
         }
 
-        /* RSVP Form */
+        /* --- RSVP Section --- */
         form {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 600px;
+            margin: 0 auto;
             text-align: left;
+            border: 2px solid var(--primary-gold);
         }
 
-        label {
+        form label {
+            display: block;
+            margin-bottom: 10px;
             font-weight: 500;
-            font-size: 0.9rem;
+            color: var(--accent-green);
         }
 
-        input, select, textarea {
+        form input, form select, form textarea {
             width: 100%;
-            padding: 12px;
+            padding: 15px;
             border: 1px solid #ddd;
-            border-radius: 6px;
-            font-family: inherit;
-            margin-top: 5px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            font-family: var(--font-main);
+            background-color: #fafdf8;
         }
 
         button.btn {
             border: none;
             cursor: pointer;
             width: 100%;
-            font-size: 1rem;
-            padding: 12px;
+            font-size: 1.1rem;
         }
 
+        /* --- Music Control Button (Floating) --- */
+        #music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-gold);
+            color: var(--text-on-dark);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            border: none;
+            cursor: pointer;
+            opacity: 0.9;
+            transition: all 0.3s ease;
+        }
+
+        #music-control:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* FontAwesome for music icons (added dynamically) */
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+        /* --- Footer --- */
         footer {
-            background-color: #2c2c2c;
-            color: #aaa;
-            padding: 30px 20px;
-            font-size: 0.9rem;
+            background-color: #121212;
+            color: #ccc;
+            padding: 40px 20px;
+            font-size: 1rem;
+            margin-top: 60px;
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 3.5rem; }
-            header { padding: 60px 15px; }
+        footer p { color: #aaa; margin-bottom: 10px; font-size: 0.95rem; }
+
+        @media (max-width: 768px) {
+            .couple-names { font-size: 3.5rem; }
+            .section-title { font-size: 2.8rem; }
+            header { padding-top: 100px; }
+            form { padding: 30px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header / Hero Section -->
+    <!-- Background Audio Element -->
+    <!-- You will need to find the specific direct link for the MP3 and replace the source URL below. 
+         Free MP3 sources for this specific song are hard to find reliably, 
+         you can explore platforms like archive.org or other reliable sources.
+         Alternatively, you can ask a friend to host the file on a server or place it 
+         directly into your GitHub repo folder if you find a suitable version.
+         Assuming we will put the audio file in the same folder as index.html called 'music.mp3'
+    -->
+    <audio id="backgroundAudio" loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Control Button -->
+    <button id="music-control" onclick="toggleMusic()">
+        <i id="music-icon" class="fas fa-play"></i>
+    </button>
+
+    <!-- Header Section -->
     <header>
-        <div class="save-the-date">Save The Date</div>
-        <h1>Eclipse & Groom</h1>
-        <p class="wedding-date">December 19, 2026</p>
+        <div class="islamic-greeting">As-Salamu Alaykum Wa Rahmatullahi Wa Barakatuh</div>
+        <div class="bismillah">In the Name of Allah, Most Gracious, Most Merciful</div>
+        <div class="basmala-text">﷽</div>
+        <h1 class="couple-names">Adam & Miriam</h1>
+        <p class="invitation-date">Saturday, August 15, 2026</p>
     </header>
 
-    <!-- Our Story / Welcome -->
+    <!-- Welcome Section -->
     <section>
-        <h2 class="section-title">We Are Getting Married!</h2>
-        <p>Together with our families, we invite you to share in our joy as we exchange our vows and begin our new chapter together. Your presence would make our special day complete.</p>
+        <h2 class="section-title">The Invitation</h2>
+        <p>It is with great joy and humble hearts, in gratitude to Allah (SWT), that we invite you to celebrate our union.</p>
         
-        <!-- Countdown Timer -->
-        <div class="countdown-container">
-            <div class="countdown-box">
-                <div class="countdown-number" id="days">00</div>
-                <div class="countdown-label">Days</div>
-            </div>
-            <div class="countdown-box">
-                <div class="countdown-number" id="hours">00</div>
-                <div class="countdown-label">Hours</div>
-            </div>
-            <div class="countdown-box">
-                <div class="countdown-number" id="minutes">00</div>
-                <div class="countdown-label">Mins</div>
-            </div>
-            <div class="countdown-box">
-                <div class="countdown-number" id="seconds">00</div>
-                <div class="countdown-label">Secs</div>
-            </div>
-        </div>
+        <blockquote style="font-style: italic; color: #555; border-left: 3px solid #ddd; padding-left: 15px; margin-bottom: 25px; text-align: center;">
+            <p style="font-size: 1rem; color: #555;">"And among His signs is that He created for you mates from among yourselves, that you may find tranquility in them; and He placed between you affection and mercy." (Surah Ar-Rum 30:21)</p>
+        </blockquote>
     </section>
 
-    <!-- Event Details -->
+    <!-- Event Details Cards -->
     <section>
-        <h2 class="section-title">The Events</h2>
+        <h2 class="section-title">The Celebrations</h2>
         <div class="details-grid">
+            
+            <!-- Nikkah/Ceremony Card -->
             <div class="card">
-                <h3>The Ceremony</h3>
-                <p><strong>Time:</strong> 10:00 AM</p>
-                <p><strong>Venue:</strong> Grace Cathedral Hall</p>
-                <p>123 Celebration Avenue, City</p>
+                <h3>The Nikkah Ceremony</h3>
+                <div class="detail-item">
+                    <span class="icon"><i class="fas fa-clock"></i></span>
+                    <p><strong>Time:</strong> 11:00 AM SHARP</p>
+                </div>
+                <div class="detail-item">
+                    <span class="icon"><i class="fas fa-mosque"></i></span>
+                    <p><strong>Venue:</strong> Masjid Al-Nur Central Hall</p>
+                </div>
+                <p>123 Faith Lane, City, State</p>
+                <p>We kindly request you to arrive before the commencement of the Nikkah Khutbah.</p>
                 <a href="https://maps.google.com" target="_blank" class="btn">View on Map</a>
             </div>
+            
+            <!-- Walima/Reception Card -->
             <div class="card">
-                <h3>The Reception</h3>
-                <p><strong>Time:</strong> 2:00 PM</p>
-                <p><strong>Venue:</strong> The Royal Event Centre</p>
-                <p>456 Harmony Boulevard, City</p>
+                <h3>The Walima Dinner</h3>
+                <div class="detail-item">
+                    <span class="icon"><i class="fas fa-utensils"></i></span>
+                    <p><strong>Time:</strong> 7:00 PM</p>
+                </div>
+                <div class="detail-item">
+                    <span class="icon"><i class="fas fa-calendar-day"></i></span>
+                    <p><strong>Date:</strong> Sunday, August 16, 2026</p>
+                </div>
+                <div class="detail-item">
+                    <span class="icon"><i class="fas fa-building"></i></span>
+                    <p><strong>Venue:</strong> The Grand Banquet Hall</p>
+                </div>
+                <p>456 Celebration Boulevard, City, State</p>
                 <a href="https://maps.google.com" target="_blank" class="btn">View on Map</a>
             </div>
         </div>
@@ -250,68 +364,67 @@
     <!-- RSVP Section -->
     <section>
         <h2 class="section-title">RSVP</h2>
-        <p>Please let us know if you will be able to celebrate with us by December 1st.</p>
+        <p>Please share your presence with us. We kindly request responses before July 1st, 2026.</p>
         <form id="rsvpForm" onsubmit="handleRSVP(event)">
             <div>
                 <label for="name">Full Name</label>
                 <input type="text" id="name" required placeholder="Enter your full name">
             </div>
+            
             <div>
                 <label for="attendance">Will you attend?</label>
                 <select id="attendance" required>
                     <option value="">Please select</option>
-                    <option value="yes">Joyfully Accepts</option>
-                    <option value="no">Regretfully Declines</option>
+                    <option value="yes">Will Attend (Bi'idhnillaah)</option>
+                    <option value="no">Unable to Attend</option>
                 </select>
             </div>
+            
             <div>
-                <label for="message">Wishes for the Couple (Optional)</label>
-                <textarea id="message" rows="3" placeholder="Leave a sweet note..."></textarea>
+                <label for="wishes">Wishes for the Couple (Optional)</label>
+                <textarea id="wishes" rows="4" placeholder="May Allah bless you..."></textarea>
             </div>
-            <button type="submit" class="btn">Send RSVP</button>
+            <button type="submit" class="btn">Send My RSVP</button>
         </form>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Eclipse & Groom. Made with love.</p>
+        <p>Made with love. Baraka Allahu Lakuma.</p>
+        <p>&copy; 2026 A & M Wedding. All Rights Reserved.</p>
     </footer>
 
-    <!-- JavaScript for Countdown and RSVP -->
+    <!-- JavaScript for RSVP and Music Control -->
     <script>
-        // Countdown Timer Logic (Target Date: Dec 19, 2026)
-        const weddingDate = new Date("December 19, 2026 10:00:00").getTime();
+        // --- Music Control ---
+        const audio = document.getElementById("backgroundAudio");
+        const musicBtn = document.getElementById("music-control");
+        const musicIcon = document.getElementById("music-icon");
+        let isPlaying = false;
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
-
-            if (distance < 0) {
-                document.querySelector(".countdown-container").innerHTML = "<h3>The Wedding Day is Here!</h3>";
-                return;
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();
+                musicIcon.classList.remove("fa-pause");
+                musicIcon.classList.add("fa-play");
+                musicBtn.style.opacity = 0.9;
+            } else {
+                audio.play();
+                musicIcon.classList.remove("fa-play");
+                musicIcon.classList.add("fa-pause");
+                musicBtn.style.opacity = 1;
             }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = String(days).padStart(2, '0');
-            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
-            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
-            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+            isPlaying = !isPlaying;
         }
 
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-
-        // RSVP Handler (Simple alert mockup)
+        // --- RSVP Handler ---
         function handleRSVP(event) {
-            event.preventDefault();
+            event.preventDefault(); // Prevents the form from submitting normally
             const name = document.getElementById("name").value;
-            alert(`Thank you, ${name}! Your RSVP has been received.`);
-            document.getElementById("rsvpForm").reset();
+            alert(`JazakAllah Khair, ${name}! Your RSVP has been received.`);
+            document.getElementById("rsvpForm").reset(); // Resets the form
         }
     </script>
+
 </body>
 </html>
